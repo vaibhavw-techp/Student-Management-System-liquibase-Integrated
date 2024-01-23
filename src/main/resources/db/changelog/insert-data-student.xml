@@ -12,7 +12,7 @@
             <column name="academic_year" value="2024"/>
             <column name="department" value="Computer Science"/>
         </insert>
-        <!-- Add more inserts as needed -->
+
     </changeSet>
 
 </databaseChangeLog>

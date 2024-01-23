@@ -13,7 +13,7 @@
             <column name="credits" value="3"/>
             <column name="fee" value="1000.00"/>
         </insert>
-        <!-- Add more inserts as needed -->
+
     </changeSet>
 
 </databaseChangeLog>

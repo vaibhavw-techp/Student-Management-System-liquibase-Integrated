@@ -1,4 +1,4 @@
-package com.Project.StudentManagement.RequestForPost;
+package com.Project.StudentManagement.requestforpost;
 
 import java.util.List;
 

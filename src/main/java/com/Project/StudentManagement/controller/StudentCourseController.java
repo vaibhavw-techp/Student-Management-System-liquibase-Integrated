@@ -1,13 +1,12 @@
 package com.Project.StudentManagement.controller;
 
 
-import com.Project.StudentManagement.RequestForPost.CourseRequest;
-import com.Project.StudentManagement.RequestForPost.StudentRequest;
+import com.Project.StudentManagement.requestforpost.CourseRequest;
+import com.Project.StudentManagement.requestforpost.StudentRequest;
 import com.Project.StudentManagement.entity.Course;
 import com.Project.StudentManagement.entity.Student;
 import com.Project.StudentManagement.repository.CourseRepository;
 import com.Project.StudentManagement.repository.StudentRepository;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,8 +25,8 @@ public class StudentCourseController {
     @Autowired
     private StudentRepository studentRepository;
 
-    @PostMapping("/createStudent")
-    public ResponseEntity<String> createNewStudent(@RequestBody @NotNull StudentRequest studentRequest) {
+    @PostMapping
+    public ResponseEntity<String> createNewStudent(@RequestBody StudentRequest studentRequest) {
         String studentName = studentRequest.getName();
         String studentYear = studentRequest.getYear();
         String studentDept = studentRequest.getDept();

@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-    <!-- Change Set for creating tables -->
+<!--    This is a ChangeSet for creting tables and sequence-->
     <changeSet id="5" author="vaibhav">
 
         <createSequence sequenceName="student_tbl_seq" incrementBy="1" startValue="1"/>
@@ -52,8 +52,6 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
-
-
 
 
     </changeSet>

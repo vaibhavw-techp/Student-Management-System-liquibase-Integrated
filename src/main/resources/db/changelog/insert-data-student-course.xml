@@ -10,7 +10,6 @@
             <column name="student_id" value="1"/>
             <column name="course_id" value="1"/>
         </insert>
-        <!-- Add more inserts as needed -->
     </changeSet>
 
 </databaseChangeLog>

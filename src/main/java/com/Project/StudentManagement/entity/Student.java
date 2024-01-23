@@ -22,8 +22,6 @@ import java.util.Set;
 public class Student {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @GeneratedValue
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_seq")
     @SequenceGenerator(name = "student_seq", sequenceName = "student_tbl_seq", allocationSize = 1)
     private Integer id;
