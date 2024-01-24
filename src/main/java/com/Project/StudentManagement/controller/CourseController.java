@@ -4,19 +4,19 @@ import com.Project.StudentManagement.dto.CourseDTO;
 import com.Project.StudentManagement.dto.StudentDTO;
 import com.Project.StudentManagement.exceptions.ResourceNotFoundException;
 import com.Project.StudentManagement.services.CourseService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 @RestController
 @RequestMapping("/courses")
-public class courseController {
+public class CourseController {
 
     @Autowired
     private CourseService courseService;
@@ -43,13 +43,13 @@ public class courseController {
     }
 
     @PostMapping
-    public List<CourseDTO> createMultipleCourses(@RequestBody List<CourseDTO> courseDTOs) {
+    public List<CourseDTO> createMultipleCourses(@Valid @RequestBody List<CourseDTO> courseDTOs) {
         return courseService.createMultipleCourses(courseDTOs);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<CourseDTO> updateCourses(@PathVariable(value = "id") Integer courseId,
-                                                   @Validated @RequestBody CourseDTO courseDTO) throws ResourceNotFoundException {
+                                                   @Valid @RequestBody CourseDTO courseDTO) throws ResourceNotFoundException {
         CourseDTO updatedCourse = courseService.updateCourse(courseId, courseDTO);
         return ResponseEntity.ok(updatedCourse);
     }

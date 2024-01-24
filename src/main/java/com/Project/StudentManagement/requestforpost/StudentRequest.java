@@ -1,8 +1,11 @@
 package com.Project.StudentManagement.requestforpost;
 
+import jakarta.validation.constraints.NotNull;
+
 import java.util.List;
 
 public class StudentRequest {
+
     private String name;
     private String year;
     private String dept;

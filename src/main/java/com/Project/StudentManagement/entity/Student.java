@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,13 +28,17 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_seq")
     @SequenceGenerator(name = "student_seq", sequenceName = "student_tbl_seq", allocationSize = 1)
     private Integer id;
-    @Column(name="name", nullable = false)
+
+    @Column(name="name")
+    @NotEmpty
     private String name;
 
-    @Column(name = "academic_year",nullable = false)
+    @Column(name = "academic_year")
+    @NotNull
     private String year;
 
-    @Column(name="department",nullable = false)
+    @Column(name="department")
+    @NotNull
     private String dept;
     //    @Column(name = "Courses")
 

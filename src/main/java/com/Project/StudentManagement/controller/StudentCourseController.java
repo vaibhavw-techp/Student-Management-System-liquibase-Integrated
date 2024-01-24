@@ -7,6 +7,7 @@ import com.Project.StudentManagement.entity.Course;
 import com.Project.StudentManagement.entity.Student;
 import com.Project.StudentManagement.repository.CourseRepository;
 import com.Project.StudentManagement.repository.StudentRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public class StudentCourseController {
     private StudentRepository studentRepository;
 
     @PostMapping
-    public ResponseEntity<String> createNewStudent(@RequestBody StudentRequest studentRequest) {
+    public ResponseEntity<String> createNewStudent(@Valid @RequestBody StudentRequest studentRequest) {
         String studentName = studentRequest.getName();
         String studentYear = studentRequest.getYear();
         String studentDept = studentRequest.getDept();
